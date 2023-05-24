@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author
+ * @author 
  */
 public class FrmListarDocentes extends javax.swing.JFrame {
 

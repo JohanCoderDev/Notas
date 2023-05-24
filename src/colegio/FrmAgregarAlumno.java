@@ -186,13 +186,13 @@ public class FrmAgregarAlumno extends javax.swing.JFrame {
         if (!txtCorreo.getText().isEmpty() && !txtIdentificacion.getText().isEmpty()
                 && !txtNombre.getText().isEmpty()){            
             try{
-                int document = Integer.parseInt(txtIdentificacion.getText().trim());
-                String name = txtNombre.getText();
-                String email = txtCorreo.getText();
-                String gender = cbGenero.getSelectedItem().toString();
-                Alumno student = new Alumno(gender, txtIdentificacion.getText().trim(), name, email);
-                if (GestionColegio.checkDuplicateDocument(txtIdentificacion.getText())==false){
-                    GestionColegio.agregarAlumno(student);
+                int identifica= Integer.parseInt(txtIdentificacion.getText().trim());
+                String nombre = txtNombre.getText();
+                String correo = txtCorreo.getText();
+                String genero = cbGenero.getSelectedItem().toString();
+                Alumno unAlumno = new Alumno(genero, txtIdentificacion.getText().trim(), nombre, correo);
+                if (GestionColegio.existeAlumno(txtIdentificacion.getText())==false){
+                    GestionColegio.agregarAlumno(unAlumno);
                     JOptionPane.showMessageDialog(null, "Alumno Agregado");
                     txtCorreo.setText("");
                     txtIdentificacion.setText("");
